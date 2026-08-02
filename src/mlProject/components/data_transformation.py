@@ -18,8 +18,8 @@ class DataTransformation:
         #split the data into train and test sets(0.75.0.25) split
         train, test = train_test_split(data)
 
-        train.to_csv(os.path.join(self.config.root_dir,"train_csv"),index = False)
-        test.to_csv(os.path.join(self.config.root_dir,"test_csv"),index = False)
+        train.to_csv(os.path.join(self.config.root_dir,"train.csv"),index = False)
+        test.to_csv(os.path.join(self.config.root_dir,"test.csv"),index = False)
 
         logger.info("Splitted data into training and test sets")
         logger.info(train.shape)
