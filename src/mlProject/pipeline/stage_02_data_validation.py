@@ -5,7 +5,7 @@ from mlProject import logger
 STAGE_NAME = "Data Validation Stage"
 
 class DataValidationTrainingPipeline:
-    def __init(self):
+    def __init__(self):
         pass
 
     def main(self):
