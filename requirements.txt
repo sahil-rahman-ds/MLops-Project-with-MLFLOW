@@ -12,4 +12,8 @@ joblib
 types-PyYAML
 Flask
 Flask-Cors
+fastapi
+uvicorn
+python-multipart
+jinja2
 -e .

@@ -1,69 +1,99 @@
-# MLops-Project-with-MLFLOW
+# 🍷 Wine Quality Prediction using MLOps
 
+An end-to-end Machine Learning Operations (MLOps) project for predicting wine quality using a modular pipeline architecture. The project automates data ingestion, validation, transformation, model training, evaluation, and deployment through a FastAPI web application.
 
-## Workflows
+---
 
-1. Update config.yaml
-2. Update schema.yaml
-3. Update params.yaml
-4. Update the entity
-5. Update the configuration manager in src config
-6. Update the components
-7. Update the pipelines
-8. Update the main.py
-9. Update the app.py
+## 📌 Project Overview
 
+This project demonstrates the complete lifecycle of a machine learning model following MLOps best practices.
 
+The pipeline includes:
 
-# End-to-end-Machine-Learning-Project-with-MLflow
+- Data Ingestion
+- Data Validation
+- Data Transformation
+- Model Training
+- Model Evaluation
+- Prediction Pipeline
+- FastAPI Deployment
+- MLflow Experiment Tracking
+- Docker Support
 
+---
 
-## Workflows
+## 📂 Project Structure
 
-1. Update config.yaml
-2. Update schema.yaml
-3. Update params.yaml
-4. Update the entity
-5. Update the configuration manager in src config
-6. Update the components
-7. Update the pipeline 
-8. Update the main.py
-9. Update the app.py
-
-
-
-# How to run?
-### STEPS:
-
-Clone the repository
-
-```bash
-https://github.com/sahil-rahman-ds/MLops-Project-with-MLFLOW
+```
+.
+├── artifacts/
+│   ├── data_ingestion/
+│   ├── data_validation/
+│   ├── data_transformation/
+│   ├── model_trainer/
+│   └── model_evaluation/
+│
+├── config/
+│   └── config.yaml
+│
+├── logs/
+├── mlruns/
+├── research/
+│
+├── mlProject/
+│   ├── components/
+│   ├── config/
+│   ├── constants/
+│   ├── entity/
+│   ├── pipeline/
+│   ├── utils/
+│   └── __init__.py
+│
+├── static/
+├── templates/
+│
+├── app.py
+├── main.py
+├── Dockerfile
+├── params.yaml
+├── schema.yaml
+├── setup.py
+├── requirements.txt
+└── README.md
 ```
 
+---
 
-### Install the requirements
+## 🚀 Features
+
+- Modular project architecture
+- YAML-based configuration
+- Data validation using schema
+- Feature engineering
+- ElasticNet model training
+- MLflow experiment tracking
+- FastAPI web interface
+- Docker support
+- Production-ready prediction pipeline
+
+
+## ⚙️ Installation
+
+### Clone Repository
+
+```bash
+git clone <https://github.com/sahil-rahman-ds/MLops-Project-with-MLFLOW>
+```
+
+```bash
+cd <MLops-Project-with-MLFLOW>
+```
+
+### Install Dependencies
+
 ```bash
 pip install -r requirements.txt
 ```
-
-
-```bash
-# Finally run the following command
-python app.py
-```
-
-Now,
-```bash
-open up you local host and port
-```
-
-
-
-## MLflow
-
-[Documentation](https://mlflow.org/docs/latest/index.html)
-
 
 ##### cmd
 - mlflow ui
@@ -71,104 +101,166 @@ open up you local host and port
 ### dagshub
 [dagshub](https://dagshub.com/)
 
-MLFLOW_TRACKING_URI=https://dagshub.com/sahil-rahman-ds/MLops-Project-with-MLFLOW.mlflow \
-MLFLOW_TRACKING_USERNAME=sahil-rahman-ds \
-MLFLOW_TRACKING_PASSWORD=10d156914dbfaac02412bcf571e182d0cabd7edc \
-python script.py
-
-Run this to export as env variables:
+Run this in the terminal before running the pipeline:
 
 ```bash
 
-export MLFLOW_TRACKING_URI=https://dagshub.com/sahil-rahman-ds/MLops-Project-with-MLFLOW.mlflow
+$env:MLFLOW_TRACKING_URI="https://dagshub.com/sahil-rahman-ds/MLops-Project-with-MLFLOW.mlflow"
 
-export MLFLOW_TRACKING_USERNAME=sahil-rahman-ds 
+$env:MLFLOW_TRACKING_USERNAME="sahil-rahman-ds" 
 
-export MLFLOW_TRACKING_PASSWORD=10d156914dbfaac02412bcf571e182d0cabd7edc
+$env:MLFLOW_TRACKING_PASSWORD="10d156914dbfaac02412bcf571e182d0cabd7edc"
 
+```
+---
+
+## ▶️ Run Training Pipeline
+
+Run the entire ML pipeline
+
+```bash
+python main.py
+```
+
+This executes:
+
+- Data Ingestion
+- Data Validation
+- Data Transformation
+- Model Training
+- Model Evaluation
+
+Artifacts are stored inside the **artifacts/** folder.
+
+---
+
+## ▶️ Run FastAPI Application
+
+Start the FastAPI server
+
+```bash
+uvicorn app:app --reload
+```
+
+Application URL
+
+```
+http://127.0.0.1:8000
+```
+
+---
+
+## 🌐 API Endpoints
+
+### Home
+
+```
+GET /
+```
+
+Displays the prediction form.
+
+---
+
+### Train Model
+
+```
+GET /train
+```
+
+Runs the complete training pipeline.
+
+---
+
+### Predict
+
+```
+POST /predict
+```
+
+Accepts wine feature values and predicts wine quality.
+
+---
+
+## 📊 MLflow
+
+Launch MLflow UI
+
+```bash
+mlflow ui
+```
+
+Open
+
+```
+http://127.0.0.1:5000
 ```
 
 
+## 📁 Configuration Files
 
-# AWS-CICD-Deployment-with-Github-Actions
+### config.yaml
 
-## 1. Login to AWS console.
+Stores project paths.
 
-## 2. Create IAM user for deployment
+### params.yaml
 
-	#with specific access
+Stores model hyperparameters.
 
-	1. EC2 access : It is virtual machine
+### schema.yaml
 
-	2. ECR: Elastic Container registry to save your docker image in aws
+Stores dataset schema used for validation.
 
+---
 
-	#Description: About the deployment
+## 🧠 Machine Learning Pipeline
 
-	1. Build docker image of the source code
+```
+Raw Dataset
+      │
+      ▼
+Data Ingestion
+      │
+      ▼
+Data Validation
+      │
+      ▼
+Data Transformation
+      │
+      ▼
+Model Training
+      │
+      ▼
+Model Evaluation
+      │
+      ▼
+Prediction Pipeline
+      │
+      ▼
+FastAPI Web Application
+```
 
-	2. Push your docker image to ECR
+---
 
-	3. Launch Your EC2 
+## 📦 Artifacts
 
-	4. Pull Your image from ECR in EC2
+The project automatically generates:
 
-	5. Lauch your docker image in EC2
+- Trained Model
+- Processed Dataset
+- Validation Report
+- Evaluation Metrics
 
-	#Policy:
+inside the **artifacts/** directory.
 
-	1. AmazonEC2ContainerRegistryFullAccess
+---
 
-	2. AmazonEC2FullAccess
+## 📜 License
 
-	
-## 3. Create ECR repo to store/save docker image
-    - Save the URI: 566373416292.dkr.ecr.ap-south-1.amazonaws.com/mlproj
+This project is licensed under the **MIT License**.
 
-	
-## 4. Create EC2 machine (Ubuntu) 
+---
 
-## 5. Open EC2 and Install docker in EC2 Machine:
-	
-	
-	#optinal
+## 👨‍💻 Author
 
-	sudo apt-get update -y
-
-	sudo apt-get upgrade
-	
-	#required
-
-	curl -fsSL https://get.docker.com -o get-docker.sh
-
-	sudo sh get-docker.sh
-
-	sudo usermod -aG docker ubuntu
-
-	newgrp docker
-	
-# 6. Configure EC2 as self-hosted runner:
-    setting>actions>runner>new self hosted runner> choose os> then run command one by one
-
-
-# 7. Setup github secrets:
-
-    AWS_ACCESS_KEY_ID=
-
-    AWS_SECRET_ACCESS_KEY=
-
-    AWS_REGION = us-east-1
-
-    AWS_ECR_LOGIN_URI = demo>>  566373416292.dkr.ecr.ap-south-1.amazonaws.com
-
-    ECR_REPOSITORY_NAME = simple-app
-
-
-
-
-## About MLflow 
-MLflow
-
- - Its Production Grade
- - Trace all of your expriements
- - Logging & tagging your model
+**Sahil Rahman**
