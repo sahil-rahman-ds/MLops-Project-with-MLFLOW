@@ -257,10 +257,10 @@ inside the **artifacts/** directory.
 
 ## 📜 License
 
-This project is licensed under the **MIT License**.
+This project is licensed under the terms of the **[MIT License](LICENSE)** - see the **`LICENSE`** file for details.
 
 ---
 
-## 👨‍💻 Author
+## 👤 Author
 
-**Sahil Rahman**
+[sahil-rahman-ds](https://github.com/sahil-rahman-ds)
